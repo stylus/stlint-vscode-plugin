@@ -1,0 +1,30 @@
+{
+  "name": "stlint-vscode-plugin",
+  "version": "1.0.0",
+  "description": "Plugin STLint for Visual Studio Code",
+  "main": "index.js",
+  "scripts": {
+    "newversion": "npm test && npm version patch --no-git-tag-version && npm run build && npm run doc && npm run newversiongit && npm publish ./",
+    "newversiongit": "git add --all  && git commit -m \"New version $npm_package_version. Read more https://github.com/stylus/stlint-vscode-plugin/releases/tag/$npm_package_version \" && git tag $npm_package_version && git push --tags origin HEAD:master",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "keywords": [
+    "lint",
+    "linter",
+    "stylus",
+    "stylus-linter",
+    "vscode",
+    "plugin",
+    "stlint"
+  ],
+  "author": "Chupurnov Valeriy<chupurnov@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stylus/stlint-vscode-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/stylus/stlint-vscode-plugin/issues"
+  },
+  "license": "MIT"
+}
