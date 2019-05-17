@@ -175,23 +175,23 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 
 	let content = textDocument.getText();
 
-	let problems = 0;
 	let diagnostics: Diagnostic[] = [];
-	
+
+	linter.reporter.reset();
 	linter.lint(getFilePath(textDocument), content);
 	const response = linter.reporter.response;
-
+	
 	if (!response.passed && response.errors && response.errors.length) {
-		response.errors.forEach((message) => {
-			message.message.forEach((msg) => {
+		response.errors.forEach((error) => {
+			error.message.forEach((msg) => {
 				let diagnostic: Diagnostic = {
 					severity: DiagnosticSeverity.Error,
 					range: {
-						start: { line: msg.line, character: msg.start },
-						end: { line: msg.endline, character: msg.end }
+						start: { line: msg.line - 1, character: msg.start - 1 },
+						end: { line: msg.endline - 1, character: msg.end }
 					},
 					message: msg.descr,
-					source: 'ex'
+					source: msg.rule
 				};
 
 				diagnostics.push(diagnostic);

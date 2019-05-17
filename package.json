@@ -2,7 +2,7 @@
     "name": "stlint-vscode-plugin",
     "displayName": "StLint",
     "description": "Plugin StLint for Visual Studio Code",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "xdan",
     "engines": {
         "vscode": "^1.33.0"
@@ -154,7 +154,8 @@
         "watch:server": "tsc -w -p ./server/tsconfig.json",
         "compile": "npm run compile:client && npm run compile:server",
         "watch": "npm run watch:client && npm run watch:server",
-        "postinstall": "cd client && npm install && cd ../server && npm install && cd .."
+        "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
+        "postupdate": "cd client && npm update && cd ../server && npm update && cd .."
     },
     "devDependencies": {
         "@types/mocha": "^2.2.42",
@@ -171,8 +172,5 @@
     "bugs": {
         "url": "https://github.com/stylus/stlint-vscode-plugin/issues"
     },
-    "license": "MIT",
-    "dependencies": {
-        "stlint": "^1.0.41"
-    }
+    "license": "MIT"
 }

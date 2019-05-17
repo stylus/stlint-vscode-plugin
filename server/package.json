@@ -3,7 +3,7 @@
 	"description": "VSCode part of a language server",
 	"author": "Microsoft Corporation",
 	"license": "MIT",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "vscode",
 	"repository": {
 		"type": "git",
@@ -17,7 +17,7 @@
 		"postinstall": "vscode-install"
 	},
 	"dependencies": {
-		"stlint": "^1.0.41",
+		"stlint": "^1.0.42",
 		"vscode-languageserver": "^4.1.4"
 	},
 	"devDependencies": {
