@@ -13,12 +13,12 @@ On new folders you might also need to create a `.stlintrc` configuration file. T
 ### Via Visual Studio Code
 
 1. Press <kbd>Ctrl</kbd> + <kbd>P</kbd> to open the _Go to File..._ view
-2. Type `ext install xdan.vscode-stlint` and press <kbd>Enter</kbd>
+2. Type `ext install xdan.stlint-vscode-plugin` and press <kbd>Enter</kbd>
 
 ### From VSIX
 
 1. Download the `.vsix` file of the latest [release from GitHub](https://github.com/stylus/stlint-vscode-plugin/releases)
-2. Run `code --install-extension vscode-stlint-*.*.*.vsix` in the command line ([reference](https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix))
+2. Run `code --install-extension stlint-vscode-plugin-*.*.*.vsix` in the command line ([reference](https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix))
 
 ## Settings Options
 
