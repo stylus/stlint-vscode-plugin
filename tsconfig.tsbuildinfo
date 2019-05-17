@@ -109,10 +109,6 @@
         "version": "39988b127015277e423249829dfc45f12269ee3808f763ad2759fb56ed1aa156",
         "signature": "39988b127015277e423249829dfc45f12269ee3808f763ad2759fb56ed1aa156"
       },
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/out/extension.d.ts": {
-        "version": "28fd02b23f22a42df03edc496d91b458cbb5c0b39a9933a40f136e465bf6dc1f",
-        "signature": "28fd02b23f22a42df03edc496d91b458cbb5c0b39a9933a40f136e465bf6dc1f"
-      },
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/globals.d.ts": {
         "version": "1bba2fc2e58c0340b92eeb9185be6e75e27d52f10a315aa65810a19b3277f1c7",
         "signature": "1bba2fc2e58c0340b92eeb9185be6e75e27d52f10a315aa65810a19b3277f1c7"
@@ -421,10 +417,6 @@
         "version": "28fd02b23f22a42df03edc496d91b458cbb5c0b39a9933a40f136e465bf6dc1f",
         "signature": "28fd02b23f22a42df03edc496d91b458cbb5c0b39a9933a40f136e465bf6dc1f"
       },
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/out/server/src/extension.d.ts": {
-        "version": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
-        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
-      },
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/out/server/src/server.d.ts": {
         "version": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
@@ -675,12 +667,6 @@
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/out/extension.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
@@ -1314,12 +1300,6 @@
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/out/server/src/extension.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/out/server/src/server.d.ts": [
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
@@ -1591,12 +1571,6 @@
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/out/extension.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
@@ -2076,28 +2050,6 @@
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/src/extension.ts": [
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts"
       ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/out/client/src/extension.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/out/server/src/extension.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/out/server/src/server.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/thenable.d.ts": [
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
@@ -2126,95 +2078,16 @@
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/main.d.ts": [
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.implementation.d.ts": [
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/main.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/configuration.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/workspacefolders.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/files.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/thenable.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/index.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/workspacefolders.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/configuration.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.implementation.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.typedefinition.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.workspacefolders.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.configuration.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.colorprovider.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.foldingrange.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.declaration.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.declaration.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.foldingrange.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.colorprovider.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.typedefinition.d.ts": [
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
-        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.implementation.d.ts": [
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts",
@@ -2237,7 +2110,107 @@
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.colorprovider.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.foldingrange.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.declaration.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.implementation.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.typedefinition.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.workspacefolders.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.configuration.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.colorprovider.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.foldingrange.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.declaration.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/main.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-jsonrpc/lib/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-types/lib/umd/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/protocol.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/configuration.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/workspacefolders.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/files.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/main.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver-protocol/lib/main.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/configuration.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/workspacefolders.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/files.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/thenable.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/index.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/out/client/src/extension.d.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/out/server/src/server.d.ts": [
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/vscode/vscode.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
