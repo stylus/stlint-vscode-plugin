@@ -1594,8 +1594,8 @@
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/files.d.ts",
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/main.d.ts",
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-uri/lib/umd/index.d.ts",
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts",
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/src/server.ts"
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/src/server.ts",
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts"
     ]
   },
   "version": "3.4.5"

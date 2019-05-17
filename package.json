@@ -2,7 +2,7 @@
     "name": "stlint-vscode-plugin",
     "displayName": "StLint",
     "description": "Plugin StLint for Visual Studio Code",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "xdan",
     "engines": {
         "vscode": "^1.33.0"
