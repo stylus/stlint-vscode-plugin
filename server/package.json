@@ -17,6 +17,7 @@
 		"postinstall": "vscode-install"
 	},
 	"dependencies": {
+		"stlint": "^1.0.41",
 		"vscode-languageserver": "^4.1.4"
 	},
 	"devDependencies": {

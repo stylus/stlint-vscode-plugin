@@ -16,6 +16,8 @@ import {
 	CompletionItemKind,
 	TextDocumentPositionParams
 } from 'vscode-languageserver';
+import URI from 'vscode-uri';
+import { Linter } from "stlint";
 
 // Create a connection for the server. The connection uses Node's IPC as a transport.
 // Also include all preview / proposed LSP features.
@@ -28,6 +30,42 @@ let documents: TextDocuments = new TextDocuments();
 let hasConfigurationCapability: boolean = false;
 let hasWorkspaceFolderCapability: boolean = false;
 let hasDiagnosticRelatedInformationCapability: boolean = false;
+
+namespace Is {
+    const toString = Object.prototype.toString;
+
+    export function boolean(value: any): value is boolean {
+        return value === true || value === false;
+    }
+
+    export function string(value: any): value is string {
+        return toString.call(value) === '[object String]';
+    }
+}
+
+function getFileSystemPath(uri: URI): string {
+    let result = uri.fsPath;
+	
+	if (process.platform === 'win32' && result.length >= 2 && result[1] === ':') {
+        return result[0].toUpperCase() + result.substr(1);
+	}
+	
+    return result;
+}
+
+function getFilePath(documentOrUri: string | TextDocument): string {
+    if (!documentOrUri) {
+        return undefined;
+    }
+	
+	let uri = Is.string(documentOrUri) ? URI.parse(documentOrUri) : URI.parse(documentOrUri.uri);
+	
+	if (uri.scheme !== 'file') {
+        return undefined;
+    }
+	
+	return getFileSystemPath(uri);
+}
 
 connection.onInitialize((params: InitializeParams) => {
 	let capabilities = params.capabilities;
@@ -123,6 +161,8 @@ documents.onDidChangeContent(change => {
 	validateTextDocument(change.document);
 });
 
+const linter = new Linter();
+
 async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 	// In this simple example we get the settings for every validate run.
 	let settings = await getDocumentSettings(textDocument.uri);
@@ -134,38 +174,28 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 
 	let problems = 0;
 	let diagnostics: Diagnostic[] = [];
-	while ((m = pattern.exec(text)) && problems < settings.maxNumberOfProblems) {
-		problems++;
-		let diagnostic: Diagnostic = {
-			severity: DiagnosticSeverity.Warning,
-			range: {
-				start: textDocument.positionAt(m.index),
-				end: textDocument.positionAt(m.index + m[0].length)
-			},
-			message: `${m[0]} is all uppercase.`,
-			source: 'ex'
-		};
-		if (hasDiagnosticRelatedInformationCapability) {
-			diagnostic.relatedInformation = [
-				{
-					location: {
-						uri: textDocument.uri,
-						range: Object.assign({}, diagnostic.range)
-					},
-					message: 'Spelling matters'
-				},
-				{
-					location: {
-						uri: textDocument.uri,
-						range: Object.assign({}, diagnostic.range)
-					},
-					message: 'Particularly for names'
-				}
-			];
-		}
-		diagnostics.push(diagnostic);
-	}
+	
+	linter.lint(getFilePath(textDocument), text);
+	const response = linter.reporter.response;
 
+	if (!response.passed && response.errors && response.errors.length) {
+		response.errors.forEach((message) => {
+			message.message.forEach((msg) => {
+				let diagnostic: Diagnostic = {
+					severity: DiagnosticSeverity.Error,
+					range: {
+						start: { line: msg.line, character: msg.start },
+						end: { line: msg.endline, character: msg.end }
+					},
+					message: msg.descr,
+					source: 'ex'
+				};
+
+				diagnostics.push(diagnostic);
+			});
+		});
+	}
+	
 	// Send the computed diagnostics to VSCode.
 	connection.sendDiagnostics({ uri: textDocument.uri, diagnostics });
 }
@@ -210,26 +240,6 @@ connection.onCompletionResolve(
 		return item;
 	}
 );
-
-/*
-connection.onDidOpenTextDocument((params) => {
-	// A text document got opened in VSCode.
-	// params.uri uniquely identifies the document. For documents store on disk this is a file URI.
-	// params.text the initial full content of the document.
-	connection.console.log(`${params.textDocument.uri} opened.`);
-});
-connection.onDidChangeTextDocument((params) => {
-	// The content of a text document did change in VSCode.
-	// params.uri uniquely identifies the document.
-	// params.contentChanges describe the content changes to the document.
-	connection.console.log(`${params.textDocument.uri} changed: ${JSON.stringify(params.contentChanges)}`);
-});
-connection.onDidCloseTextDocument((params) => {
-	// A text document got closed in VSCode.
-	// params.uri uniquely identifies the document.
-	connection.console.log(`${params.textDocument.uri} closed.`);
-});
-*/
 
 // Make the text document manager listen on the connection
 // for open, change and close text document events

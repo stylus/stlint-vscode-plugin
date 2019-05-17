@@ -7,7 +7,7 @@
         "vscode": "^1.33.0"
     },
     "categories": [
-        "Other"
+        "Linters"
     ],
     "activationEvents": [
         "onLanguage:stylus",
@@ -50,6 +50,23 @@
             "type": "object",
             "title": "StLint",
             "properties": {
+                "languageServerExample.maxNumberOfProblems": {
+					"scope": "resource",
+					"type": "number",
+					"default": 100,
+					"description": "Controls the maximum number of problems produced by the server."
+				},
+				"languageServerExample.trace.server": {
+					"scope": "window",
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "off",
+					"description": "Traces the communication between VS Code and the language server."
+				},
                 "stlint.enable": {
                     "scope": "resource",
                     "type": "boolean",
@@ -169,21 +186,8 @@
     "bugs": {
         "url": "https://github.com/stylus/stlint-vscode-plugin/issues"
     },
-    "configuration": {
-        "type": "object",
-        "title": "Example configuration",
-        "properties": {
-            "languageServerExample.maxNumberOfProblems": {
-                "scope": "resource",
-                "type": "number",
-                "default": 100,
-                "description": "Controls the maximum number of problems produced by the server."
-            }
-        }
-    },
     "license": "MIT",
     "dependencies": {
-        "stlint": "^1.0.41",
-        "vscode-languageclient": "^5.2.1"
+        "stlint": "^1.0.41"
     }
 }
