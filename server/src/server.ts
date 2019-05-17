@@ -109,13 +109,16 @@ connection.onInitialized(() => {
 
 // The example settings
 interface ExampleSettings {
-	maxNumberOfProblems: number;
+	enable: boolean;
 }
 
 // The global settings, used when the `workspace/configuration` request is not supported by the client.
 // Please note that this is not the case when using this server with the client provided in this example
 // but could happen with other clients.
-const defaultSettings: ExampleSettings = { maxNumberOfProblems: 1000 };
+const defaultSettings: ExampleSettings = { 
+	enable: true 
+};
+
 let globalSettings: ExampleSettings = defaultSettings;
 
 // Cache the settings of all open documents
@@ -143,7 +146,7 @@ function getDocumentSettings(resource: string): Thenable<ExampleSettings> {
 	if (!result) {
 		result = connection.workspace.getConfiguration({
 			scopeUri: resource,
-			section: 'languageServerExample'
+			section: 'stlint'
 		});
 		documentSettings.set(resource, result);
 	}
@@ -164,18 +167,18 @@ documents.onDidChangeContent(change => {
 const linter = new Linter();
 
 async function validateTextDocument(textDocument: TextDocument): Promise<void> {
-	// In this simple example we get the settings for every validate run.
 	let settings = await getDocumentSettings(textDocument.uri);
 
-	// The validator creates diagnostics for all uppercase words length 2 and more
-	let text = textDocument.getText();
-	let pattern = /\b[A-Z]{2,}\b/g;
-	let m: RegExpExecArray | null;
+	if (settings.enable) {
+		return undefined;
+	};
+
+	let content = textDocument.getText();
 
 	let problems = 0;
 	let diagnostics: Diagnostic[] = [];
 	
-	linter.lint(getFilePath(textDocument), text);
+	linter.lint(getFilePath(textDocument), content);
 	const response = linter.reporter.response;
 
 	if (!response.passed && response.errors && response.errors.length) {
@@ -195,7 +198,7 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 			});
 		});
 	}
-	
+
 	// Send the computed diagnostics to VSCode.
 	connection.sendDiagnostics({ uri: textDocument.uri, diagnostics });
 }

@@ -386,7 +386,7 @@
         "signature": "4288448b938f52500edd9a65b5d6482e4be1f14033b8fec869ed8fe235919a88"
       },
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/src/server.ts": {
-        "version": "3afee87d7a180737e15afe43fc7978a1819726de2aab96ae06bbb6cfa6964016",
+        "version": "9fd50207082f7bcb96d76b32e889545b3e837fc0ab057ada2cb6c2a4dc2f003c",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts": {
@@ -1488,11 +1488,11 @@
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts": [
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-uri/lib/umd/index.d.ts": [
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-uri/lib/umd/index.d.ts": [
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts": [
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/util.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
       ]
@@ -1593,8 +1593,8 @@
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/workspacefolders.d.ts",
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/files.d.ts",
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-languageserver/lib/main.d.ts",
-      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts",
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/node_modules/vscode-uri/lib/umd/index.d.ts",
+      "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts",
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/server/src/server.ts"
     ]
   },
