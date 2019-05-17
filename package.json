@@ -3,9 +3,11 @@
     "displayName": "StLint",
     "description": "Plugin StLint for Visual Studio Code",
     "version": "0.0.1",
+    "publisher": "xdan",
     "engines": {
         "vscode": "^1.33.0"
     },
+    "icon": "icon.png",
     "categories": [
         "Linters"
     ],

@@ -1,65 +1,69 @@
-# stlint-vscode-plugin README
+# VS Code StLint extension
 
-This is the README for your extension "stlint-vscode-plugin". After writing up a brief description, we recommend including the following sections.
+## Description
 
-## Features
+Integrates [StLint](https://github.com/stylus/stlint) into VS Code. If you are new to StLint check the [documentation](https://github.com/stylus/stlint).
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+The extension uses the StLint library installed in the opened workspace folder. If the folder doesn't provide one the extension looks for a global install version. If you haven't installed StLint either locally or globally do so by running `npm install stlint` in the workspace folder for a local install or `npm install -g stlint` for a global install.
 
-For example if there is an image subfolder under your extension project workspace:
+On new folders you might also need to create a `.stlintrc` configuration file. The extension will search for an `.stlintrc` file on the workspace folder root.
 
-\!\[feature X\]\(images/feature-x.png\)
+## Installation
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### Via Visual Studio Code
 
-## Requirements
+1. Press <kbd>Ctrl</kbd> + <kbd>P</kbd> to open the _Go to File..._ view
+2. Type `ext install xdan.vscode-stlint` and press <kbd>Enter</kbd>
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### From VSIX
 
-## Extension Settings
+1. Download the `.vsix` file of the latest [release from GitHub](https://github.com/stylus/stlint-vscode-plugin/releases)
+2. Run `code --install-extension vscode-stlint-*.*.*.vsix` in the command line ([reference](https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix))
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Settings Options
 
-For example:
+This extension contributes the following variables to the [settings](https://code.visualstudio.com/docs/customization/userandworkspace):
 
-This extension contributes the following settings:
+- `stlint.enable`: enable/disable stlint. Is enabled by default.
+- `stlint.stlintrcPath`: The path to the `.stlintrc` file. When no `.stlintrc` file is found the [default options](https://github.com/stylus/stlint#options) are used.
+- `stlint.packageManager`: controls the package manager to be used to resolve the Stlint library. This has only an influence if the Stlint library is resolved globally. Valid values are "npm" or "yarn".
+- `stlint.run`: run the linter `onSave` or `onType`, default is `onType`.
+- `stlint.nodePath`: use this setting if an installed Stlint package can't be detected, for example `/myGlobalNodePackages/node_modules`.
+- `stlint.alwaysShowStatus`: Always show the Stlint status bar item.
+- `stlint.trace.server`: Traces the communication between VSCode and the stlint linter service.
+- `stlint.workingDirectories` - an array for working directories to be used. Stlint resolves configuration files relative to a working directory. This new settings allows users to control which working directory is used for which files. Consider the following setups:
+  ```
+  client/
+    .stlintignore
+    .stlintrc
+    client.styl
+  server/
+    .stlintignore
+    .stlintrc
+    server.styl
+  ```
+  Then using the setting:
+  ```json
+    "stlint.workingDirectories": [
+      "./client", "./server"
+    ]
+  ```
+  will validate files inside the server directory with the server directory as the current working directory. Same for files   in the client directory. If the setting is omitted the working directory is the workspace folder.
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+  The setting also supports literals of the form `{ "directory": string, "changeProcessCWD": boolean }` as elements. Use this   form if you want to instruct Stlint to change the current working directory of the Stlint validation process to the value   of `directory` as well.
 
-## Known Issues
+## Commands:
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+This extension contributes the following commands to the Command palette.
 
-## Release Notes
+- `Disable Stlint for this Workspace`: disables Stlint extension for this workspace.
+- `Enable Stlint for this Workspace`: enable Stlint extension for this workspace.
+- `stylint.showOutputChannel`: show the output channel of the Stlint extension.
 
-Users appreciate release notes as you update your extension.
+## Contribution
 
-### 1.0.0
+If you found a bug or are missing a feature do not hesitate to [file an issue](https://github.com/stylus/stlint-vscode-plugin/issues/new/choose).  
+Pull Requests are welcome!
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Support
+When you like this extension make sure to [star the repo](https://github.com/stylus/stlint-vscode-plugin/stargazers) and [write a review](https://marketplace.visualstudio.com/items?itemName=xdan.stlint-vscode-plugin#review-details). I am always looking for new ideas and feedback. 

@@ -169,7 +169,7 @@ const linter = new Linter();
 async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 	let settings = await getDocumentSettings(textDocument.uri);
 
-	if (settings.enable) {
+	if (!settings.enable) {
 		return undefined;
 	};
 
