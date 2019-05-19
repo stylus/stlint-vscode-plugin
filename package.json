@@ -151,7 +151,7 @@
         "compile:client": "tsc -p ./client/tsconfig.json",
         "compile:server": "cd ./server && npm run compile && cd ..",
         "watch:client": "tsc -w -p ./client/tsconfig.json",
-        "watch:server": "tsc -w -p ./server/tsconfig.json",
+        "watch:server": "tsc -w -p ./server/src/tsconfig.json",
         "compile": "npm run compile:client && npm run compile:server",
         "watch": "npm run watch:client && npm run watch:server",
         "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
