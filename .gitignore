@@ -1,4 +1,4 @@
 out
-./client/server
+client/server
 node_modules
 .vscode-test/
