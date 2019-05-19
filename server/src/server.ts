@@ -9,8 +9,11 @@ import {
 	DidChangeConfigurationNotification,
 	CodeAction,
 	Command,
-	CodeActionKind
+	CodeActionKind,
 } from 'vscode-languageserver';
+
+import * as fs from "fs";
+
 import { Linter } from "stlint";
 
 import { CommandIds, RuleFailure, AutoFix, AllFixesRequest, AllFixesResult } from './helpers/types';
@@ -204,8 +207,20 @@ connection.onRequest(AllFixesRequest.type, async (params) => {
 	return result;
 });
 
+let configFile: string;
+
 connection.onInitialize((params: InitializeParams) => {
 	let capabilities = params.capabilities;
+
+	let workspaceFolder = params.rootPath;
+
+	configFile = workspaceFolder + '/.stlintrc';
+	if (!fs.existsSync(configFile)) {
+		configFile = workspaceFolder + '/stlintrc.json';
+	}
+	if (!fs.existsSync(configFile)) {
+		configFile = workspaceFolder + '/stlintrc.js';
+	}
 
 	// Does the client support the `workspace/configuration` request?
 	// If not, we will fall back using global settings
@@ -224,7 +239,7 @@ connection.onInitialize((params: InitializeParams) => {
 	};
 });
 
-connection.onInitialized(() => {
+connection.onInitialized((params) => {
 	if (hasConfigurationCapability) {
 		// Register for all configuration changes.
 		connection.client.register(DidChangeConfigurationNotification.type, undefined);
@@ -293,9 +308,8 @@ documents.onDidChangeContent(change => {
 	validateTextDocument(change.document);
 });
 
-const linter = new Linter();
-
 async function validateTextDocument(textDocument: TextDocument): Promise<void> {
+
 	let settings = await getDocumentSettings(textDocument.uri);
 
 	if (!settings.enable) {
@@ -306,7 +320,10 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 
 	let diagnostics: Diagnostic[] = [];
 
-	linter.reporter.reset();
+	const linter = new Linter(fs.existsSync(configFile) ? {
+		config: configFile
+	} : {});
+	
 	linter.lint(getFilePath(textDocument), content);
 	const response = linter.reporter.response;
 	

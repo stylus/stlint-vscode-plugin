@@ -59,6 +59,7 @@ async function applyTextEdits(uri: string, documentVersion: number, edits: TextE
 }
 
 let serverRunning: boolean = false;
+
 function fixAllProblems(): Thenable<any> | undefined {
 	// server is not running so there can be no problems to fix
 	if (!serverRunning) {
@@ -70,6 +71,7 @@ function fixAllProblems(): Thenable<any> | undefined {
 	}
 	return doFixAllProblems(textEditor.document, undefined); // no time budget
 }
+
 function doFixAllProblems(document: TextDocument, timeBudget: number | undefined): Thenable<any> {
 	let start = Date.now();
 	let loopCount = 0;
@@ -137,7 +139,9 @@ export function activate(context: ExtensionContext) {
 	// If the extension is launched in debug mode then the debug server options are used
 	// Otherwise the run options are used
 	let serverOptions: ServerOptions = {
-		run: { module: serverModule, transport: TransportKind.ipc },
+		run: { 
+			module: serverModule, transport: TransportKind.ipc 
+		},
 		debug: {
 			module: serverModule,
 			transport: TransportKind.ipc,
@@ -165,6 +169,7 @@ export function activate(context: ExtensionContext) {
 	
 	const running = 'Linter is running.';
 	const stopped = 'Linter has stopped.';
+	
 	client.onDidChangeState((event) => {
 		if (event.newState === ClientState.Running) {
 			client.info(running);
