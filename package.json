@@ -2,7 +2,7 @@
     "name": "stlint-vscode-plugin",
     "displayName": "StLint",
     "description": "Plugin StLint for Visual Studio Code",
-    "version": "0.0.3",
+    "version": "0.0.5",
     "publisher": "xdan",
     "engines": {
         "vscode": "^1.33.0"
@@ -147,6 +147,10 @@
         "stlint"
     ],
     "scripts": {
+        "clear": "rm -rf ./node_modules && rm -rf ./server/node_modules && rm -rf ./client/node_modules && rm -rf ./client/out/ && rm -rf ./client/server/ && rm -rf ./client/tsconfig.tsbuildinfo",
+        "rmoldvsis": "rm -f \"./stlint-vscode-plugin-$npm_package_version.vsix\"",
+        "newversion": "npm run rmoldvsis && npm version patch --no-git-tag-version && vsce package",
+        "newversiongit": "git add --all  && git commit -m \"New version $npm_package_version. Read more https://github.com/stylus/stlint/releases/tag/$npm_package_version \" && git tag $npm_package_version && git push --tags origin HEAD:master",
         "vscode:prepublish": "cd client && npm run update-vscode && cd .. && npm run compile",
         "compile:client": "tsc -p ./client/tsconfig.json",
         "compile:server": "cd ./server && npm run compile && cd ..",
