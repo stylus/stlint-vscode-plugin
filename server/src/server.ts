@@ -1,8 +1,3 @@
-/* --------------------------------------------------------------------------------------------
- * Copyright (c) Microsoft Corporation. All rights reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- * ------------------------------------------------------------------------------------------ */
-
 import {
 	createConnection,
 	TextDocuments,
@@ -12,12 +7,14 @@ import {
 	ProposedFeatures,
 	InitializeParams,
 	DidChangeConfigurationNotification,
-	CompletionItem,
-	CompletionItemKind,
-	TextDocumentPositionParams
+	CodeAction,
+	Command,
+	CodeActionKind
 } from 'vscode-languageserver';
-import URI from 'vscode-uri';
 import { Linter } from "stlint";
+
+import { CommandIds, RuleFailure, AutoFix, AllFixesRequest, AllFixesResult } from './helpers/types';
+import { sortFixes, createTextEdit, overlaps, getLastEdit, concatenateEdits, getFilePath, getAllNonOverlappingFixes, computeKey } from './helpers/helpers';
 
 // Create a connection for the server. The connection uses Node's IPC as a transport.
 // Also include all preview / proposed LSP features.
@@ -29,43 +26,183 @@ let documents: TextDocuments = new TextDocuments();
 
 let hasConfigurationCapability: boolean = false;
 let hasWorkspaceFolderCapability: boolean = false;
-let hasDiagnosticRelatedInformationCapability: boolean = false;
 
-namespace Is {
-    const toString = Object.prototype.toString;
+let codeFixActions = new Map<string, Map<string, RuleFailure>>();
 
-    export function boolean(value: any): value is boolean {
-        return value === true || value === false;
-    }
+function recordCodeAction(document: TextDocument, diagnostic: Diagnostic, problem: RuleFailure): void {
+	let fix: AutoFix | void  = problem.fix ? {
+		label: `Fix: ${problem.descr}`,
+		documentVersion: document.version,
+		problem,
+		edits: [
+			{
+				range: diagnostic.range,
+				text: problem.fix.replace
+			}
+		]
+	} : void(0);
 
-    export function string(value: any): value is string {
-        return toString.call(value) === '[object String]';
-    }
-}
+	if (!fix) {
+		return;
+	}
 
-function getFileSystemPath(uri: URI): string {
-    let result = uri.fsPath;
+	let documentAutoFixes: Map<string, AutoFix> = codeFixActions[document.uri];
 	
-	if (process.platform === 'win32' && result.length >= 2 && result[1] === ':') {
-        return result[0].toUpperCase() + result.substr(1);
+	if (!documentAutoFixes) {
+		documentAutoFixes = Object.create(null);
+		codeFixActions[document.uri] = documentAutoFixes;
 	}
 	
-    return result;
+	documentAutoFixes[computeKey(diagnostic)] = fix;
 }
 
-function getFilePath(documentOrUri: string | TextDocument): string {
-    if (!documentOrUri) {
-        return undefined;
-    }
+
+connection.onCodeAction((params): any => {
+	let result:  CodeAction[] = [];
+	let uri = params.textDocument.uri;
+	let documentVersion: number = -1;
+	let ruleId: string | undefined = undefined;
+
+	let documentFixes = codeFixActions[uri];
+	if (documentFixes) {
+		for (let diagnostic of params.context.diagnostics) {
+			let autoFix = documentFixes[computeKey(diagnostic)];
+			
+			if (autoFix) {
+				documentVersion = autoFix.documentVersion;
+				ruleId = autoFix.problem.rule;
+				
+				const resultFix = createTextEdit(autoFix);
+				
+				let command = Command.create(
+					autoFix.label, 
+					CommandIds.applySingleFix, 
+					uri, 
+					documentVersion, 
+					resultFix
+				);
+				
+				let codeAction = CodeAction.create(
+					autoFix.label,
+					command,
+					CodeActionKind.QuickFix
+				);
+				
+				codeAction.diagnostics = [diagnostic];
+				result.push(codeAction);
+			}
+		}
+		
+		if (result.length > 0) {
+			let same: AutoFix[] = [];
+			let all: AutoFix[] = [];
+			let fixes: AutoFix[] = Object.keys(documentFixes).map(key => documentFixes[key]);
+
+			fixes = sortFixes(fixes);
+
+			for (let autofix of fixes) {
+				if (documentVersion === -1) {
+					documentVersion = autofix.documentVersion;
+				}
+				if (autofix.problem.rule === ruleId && !overlaps(getLastEdit(same), autofix)) {
+					same.push(autofix);
+				}
+				if (!overlaps(getLastEdit(all), autofix)) {
+					all.push(autofix);
+				}
+			}
+
+			// if the same rule warning exists more than once, provide a command to fix all these warnings
+			if (same.length > 1) {
+				let label = `Fix all: ${same[0].problem.rule}`;
+				const resultFix = concatenateEdits(same);
+				
+				let command = Command.create(
+					label,
+					CommandIds.applySameFixes,
+					uri,
+					documentVersion, 
+					resultFix
+				);
+				
+				result.push(
+					CodeAction.create(
+						label,
+						command,
+						CodeActionKind.QuickFix
+					)
+				);
+			}
+
+			// create a command to fix all the warnings with fixes
+			if (all.length > 1) {
+				let label = `Fix all auto-fixable problems`;
+				let command = Command.create(
+					label,
+					CommandIds.applyAllFixes,
+					uri,
+					documentVersion,
+					concatenateEdits(all)
+				);
+				// Contribute both a kind = Source and kind = Quick Fix. Then
+				// action appears in the light bulb (for backward compatibility) and the Source... quick pick.
+				result.push(
+					CodeAction.create(
+						`${label} (stlint)`,
+						command,
+						CodeActionKind.Source
+					),
+					CodeAction.create(
+						label,
+						command,
+						CodeActionKind.QuickFix
+					),
+
+				);
+			}
+		}
+	}
 	
-	let uri = Is.string(documentOrUri) ? URI.parse(documentOrUri) : URI.parse(documentOrUri.uri);
 	
-	if (uri.scheme !== 'file') {
-        return undefined;
-    }
+	return result;
+});
+
+connection.onRequest(AllFixesRequest.type, async (params) => {
+	let result: AllFixesResult | undefined = undefined;
+	let uri = params.textDocument.uri;
+	let document = documents.get(uri);
+
+	if (!document) {
+		return undefined;
+	}
+
+
+	let documentFixes = codeFixActions[uri];
+	let documentVersion: number = -1;
+
+	if (!documentFixes) {
+		return undefined;
+	}
+
+	let fixes: AutoFix[] = Object.keys(documentFixes).map(key => documentFixes[key]);
+
+	for (let fix of fixes) {
+		if (documentVersion === -1) {
+			documentVersion = fix.documentVersion;
+			break;
+		}
+	}
+
+	let [allFixes, overlappingEdits] = getAllNonOverlappingFixes(fixes);
+
+	result = {
+		documentVersion: documentVersion,
+		edits: concatenateEdits(allFixes),
+		overlappingFixes: overlappingEdits
+	};
 	
-	return getFileSystemPath(uri);
-}
+	return result;
+});
 
 connection.onInitialize((params: InitializeParams) => {
 	let capabilities = params.capabilities;
@@ -78,19 +215,11 @@ connection.onInitialize((params: InitializeParams) => {
 	hasWorkspaceFolderCapability = !!(
 		capabilities.workspace && !!capabilities.workspace.workspaceFolders
 	);
-	hasDiagnosticRelatedInformationCapability = !!(
-		capabilities.textDocument &&
-		capabilities.textDocument.publishDiagnostics &&
-		capabilities.textDocument.publishDiagnostics.relatedInformation
-	);
 
 	return {
 		capabilities: {
-			textDocumentSync: documents.syncKind,
-			// Tell the client that the server supports code completion
-			completionProvider: {
-				resolveProvider: true
-			}
+			codeActionProvider: true,
+			textDocumentSync: documents.syncKind
 		}
 	};
 });
@@ -171,7 +300,7 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 
 	if (!settings.enable) {
 		return undefined;
-	};
+	}
 
 	let content = textDocument.getText();
 
@@ -191,8 +320,11 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 						end: { line: msg.endline - 1, character: msg.end }
 					},
 					message: msg.descr,
+					code: msg.rule,
 					source: msg.rule
 				};
+
+				recordCodeAction(textDocument, diagnostic, msg);
 
 				diagnostics.push(diagnostic);
 			});
@@ -202,47 +334,6 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 	// Send the computed diagnostics to VSCode.
 	connection.sendDiagnostics({ uri: textDocument.uri, diagnostics });
 }
-
-connection.onDidChangeWatchedFiles(_change => {
-	// Monitored files have change in VSCode
-	connection.console.log('We received an file change event');
-});
-
-// This handler provides the initial list of the completion items.
-connection.onCompletion(
-	(_textDocumentPosition: TextDocumentPositionParams): CompletionItem[] => {
-		// The pass parameter contains the position of the text document in
-		// which code complete got requested. For the example we ignore this
-		// info and always provide the same completion items.
-		return [
-			{
-				label: 'TypeScript',
-				kind: CompletionItemKind.Text,
-				data: 1
-			},
-			{
-				label: 'JavaScript',
-				kind: CompletionItemKind.Text,
-				data: 2
-			}
-		];
-	}
-);
-
-// This handler resolves additional information for the item selected in
-// the completion list.
-connection.onCompletionResolve(
-	(item: CompletionItem): CompletionItem => {
-		if (item.data === 1) {
-			item.detail = 'TypeScript details';
-			item.documentation = 'TypeScript documentation';
-		} else if (item.data === 2) {
-			item.detail = 'JavaScript details';
-			item.documentation = 'JavaScript documentation';
-		}
-		return item;
-	}
-);
 
 // Make the text document manager listen on the connection
 // for open, change and close text document events

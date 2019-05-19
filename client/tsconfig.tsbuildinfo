@@ -406,8 +406,8 @@
         "signature": "29a23dcaeeae886f1c94107b08fa8e330d3acac273971c50d9d05d8ca11cbd14"
       },
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/src/extension.ts": {
-        "version": "66dd4e54b57e8959beea08dfa60b592c88a13ff5d66e15b4dfa8ea6ef67c7b23",
-        "signature": "28fd02b23f22a42df03edc496d91b458cbb5c0b39a9933a40f136e465bf6dc1f"
+        "version": "004b8c978457351b807ff9899ad61fb62dfede836c8b5214db91fbbd368fd742",
+        "signature": "507026383d0d3fbf4bc39d26c1228400515e75066dcac938c31866d7719081eb"
       },
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts": {
         "version": "d93bdd7313bdc64d926cd1429bdb9a979037240e89995fddbc6817075bbfe502",
@@ -1602,6 +1602,7 @@
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/src/extension.ts": [
+        "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode-languageclient/lib/main.d.ts",
         "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/node_modules/vscode/vscode.d.ts"
       ],
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts": [
