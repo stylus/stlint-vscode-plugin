@@ -408,14 +408,13 @@
       "moduleResolution": 2,
       "allowSyntheticDefaultImports": true,
       "target": 2,
-      "outDir": "/Users/v-chupurnov/WebstormProjects/stlint-vscode-plugin/server/out",
-      "rootDir": "/Users/v-chupurnov/WebstormProjects/stlint-vscode-plugin/server/src",
+      "outDir": "/Users/v-chupurnov/WebstormProjects/stlint-vscode-plugin/client/server",
       "lib": [
         "lib.es2015.d.ts"
       ],
       "sourceMap": true,
-      "project": "./server/tsconfig.json",
-      "configFilePath": "/Users/v-chupurnov/WebstormProjects/stlint-vscode-plugin/server/tsconfig.json"
+      "project": "./src",
+      "configFilePath": "/Users/v-chupurnov/WebstormProjects/stlint-vscode-plugin/server/src/tsconfig.json"
     },
     "referencedMap": {
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/typescript/lib/lib.es5.d.ts": [

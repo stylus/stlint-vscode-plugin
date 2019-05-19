@@ -162,8 +162,8 @@
         "signature": "4a419878f025046ff6748d073123b0451849f83b7dbca907037a53e3eaa9bbbb"
       },
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/fs.d.ts": {
-        "version": "d299cefc49b5324553282f0913be665fc4522f367ab3d1fecbc6d39e987c4c7b",
-        "signature": "d299cefc49b5324553282f0913be665fc4522f367ab3d1fecbc6d39e987c4c7b"
+        "version": "69ff9a3871726b29a91044d233181f146a0d21a39f66f46dcdcce7e8f91c1de1",
+        "signature": "69ff9a3871726b29a91044d233181f146a0d21a39f66f46dcdcce7e8f91c1de1"
       },
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/node/http.d.ts": {
         "version": "896c59370c35abd48415751b78ce927eda463a20f1a3921bf3dc4962504ec06e",
@@ -406,7 +406,7 @@
         "signature": "29a23dcaeeae886f1c94107b08fa8e330d3acac273971c50d9d05d8ca11cbd14"
       },
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/client/src/extension.ts": {
-        "version": "004b8c978457351b807ff9899ad61fb62dfede836c8b5214db91fbbd368fd742",
+        "version": "d76531e5e1fe5f7ac1fa3dd22b06ed6e5c9f54d51e8dd16afbf21230fdc71ac2",
         "signature": "507026383d0d3fbf4bc39d26c1228400515e75066dcac938c31866d7719081eb"
       },
       "/users/v-chupurnov/webstormprojects/stlint-vscode-plugin/node_modules/@types/mocha/index.d.ts": {
@@ -417,6 +417,8 @@
     "options": {
       "composite": true,
       "module": 1,
+      "moduleResolution": 2,
+      "allowSyntheticDefaultImports": true,
       "target": 2,
       "outDir": "/Users/v-chupurnov/WebstormProjects/stlint-vscode-plugin/client/out",
       "rootDir": "/Users/v-chupurnov/WebstormProjects/stlint-vscode-plugin/client/src",

@@ -2,6 +2,8 @@
 	"compilerOptions": {
         "composite": true,
 		"module": "commonjs",
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
 		"target": "es6",
 		"outDir": "out",
 		"rootDir": "src",
@@ -11,7 +13,5 @@
 	"include": [
 		"src"
 	],
-	"exclude": [
-		"node_modules"
-	]
+	"exclude": ["node_modules"]
 }
